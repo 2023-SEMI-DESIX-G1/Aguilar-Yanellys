@@ -1,15 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 2</title>
 </head>
 <body>
-  
+    <!-- Primer punto -->
+    <p>Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. 
+        Se define como orientado a objetos, ​ basado en prototipos, imperativo, débilmente tipado y dinámico.
+    Se asemejan en que ambos vienen del lenguaje C pero sin embargo, tienen distinto funcionamiento y uso.</p>
 
+<script>
+    // Creación y asignación de variables
+    var add, sub, div, mult, first_number, second_number;
+    first_number = 6;
+    second_number = 3;
 
-  
+    // Operaciones
+    add = first_number + second_number;
+    sub = first_number - second_number;
+    div = first_number / second_number;
+    mult = first_number * second_number;
+
+    // Impresiones de resultados
+    document.write('El resultado de la suma es ' + add + '<br>');
+    document.write('El resultado de la resta es ' + sub + '<br>');
+    document.write('El resultado de la división es ' + div + '<br>');
+    document.write('El resultado de la multiplicación es ' + mult);
+
+    // Declarar variables 
+    let first_name = 'Edgardo';
+    let last_name = 'Vaca';
+    
+    // Concatenación
+    document.write('<br>' + first_name + ' ' + last_name);
+
+    // Declarar y asignar variables
+    const num = 5;
+    const apple = "Manzana";
+    // Impresión de tipo de cada constante
+    document.write('<br>' + typeof(num));
+    document.write('<br>' + typeof(apple));
+
+    // Creación del objeto de mi carro
+    var myCar = {
+        year: 2022,      // año
+        brand: "Suzuki", // marca
+        import: true,    // si es importado o no
+        peopleWhoCanUseTheCar: { //personas que pueden usar el carro. Objeto dentro de un objeto.
+
+        }
+    }
+
+</script>
 </body>
 </html>
