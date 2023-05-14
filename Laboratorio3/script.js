@@ -33,7 +33,7 @@
       },
       isDoubleBasePalindrome: (str) => {
         if (isNaN(str)) {
-          console.log("NO ES PALINDROMO");
+          console.log("NO ES PALINDROMO DE BASE 10 Y 2");
           return false;
         }
         return (
