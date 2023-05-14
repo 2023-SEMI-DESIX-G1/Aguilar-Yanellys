@@ -17,13 +17,13 @@
 
       const value3 = "2020";
       console.log(
-        `3. IsLeapYear('${value3}') => ${App.methods.isLeapYear(input3)}`
+        `3. IsLeapYear('${value3}') => ${App.methods.isLeapYear(value3)}`
       );
 
       const value4 = "7";
       console.log(
         `4. SumOfPrimes('${value4}') => ${JSON.stringify(
-          App.methods.sumOfPrimes(input4)
+          App.methods.sumOfPrimes(value4)
         )}`
       );
     },
@@ -33,7 +33,7 @@
       },
       isDoubleBasePalindrome: (str) => {
         if (isNaN(str)) {
-          console.log("PALINDROME NO ES NUMERO");
+          console.log("NO ES PALINDROMO DE BASE 10 Y 2");
           return false;
         }
         return (
