@@ -1,0 +1,77 @@
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  color: #2c053c;
+  font-family: 'Roboto', sans-serif;
+}
+
+.input-notes {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  color: #2c053c;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  margin: 10px auto;
+
+}
+
+.input-notes-text {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #127990;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px auto;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  max-width: 400px;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  
+}
+
+.average-result {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.progress-bar {
+  display: none;
+  width: 100%;
+  background-color: #711290;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 20px auto; 
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.progress-bar-fill {
+  height: 20px;
+  background-color: #f7abf8;
+  border-radius: 5px;
+  transition: width 0.5s;
+}
+
+
