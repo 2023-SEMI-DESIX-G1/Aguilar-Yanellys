@@ -1,7 +1,9 @@
 import { Badge } from '@material-ui/core';
-import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { Search, ShoppingCartOutlined, PersonOutlined } from '@material-ui/icons';
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
+
 
 //Styles for Navbar
 const Container = styled.div`
@@ -32,7 +34,7 @@ const SearchContainer = styled.div`
   margin-left: 25px;
   padding: 5px;
   border-radius: 25px;
-  background-color: #dbdbdb; /* Set gray background */
+  background-color: #dbdbdb;
 `;
 
 const Input = styled.input`
@@ -50,6 +52,7 @@ const Center = styled.div`
 const Logo = styled.h1`
   font-weight: bold;
   letter-spacing: 3px;
+  cursor: pointer;
 `;
 
 //Right Elements of Navbar
@@ -67,6 +70,20 @@ const MenuItem = styled.div`
 `;
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const goToSignIn = () => {
+    navigate('/signIn');
+  };
+
+  const goToShoppingCart = () => {
+    navigate('/shopping-cart');
+  };
+
+  const goToHome = () => {
+    navigate('/');
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -78,13 +95,16 @@ function Navbar() {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>SEPHORA</Logo>
+          <Logo onClick={goToHome}>SEPHORA</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+        <MenuItem>
+            <Badge onClick={goToSignIn}>
+              <PersonOutlined />
+            </Badge>
+          </MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={4} onClick={goToShoppingCart} color="error">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
