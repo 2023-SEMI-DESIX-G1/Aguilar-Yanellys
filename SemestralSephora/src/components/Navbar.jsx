@@ -73,7 +73,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   const goToSignIn = () => {
-    navigate('/signIn');
+    navigate('/sign-in');
   };
 
   const goToShoppingCart = () => {

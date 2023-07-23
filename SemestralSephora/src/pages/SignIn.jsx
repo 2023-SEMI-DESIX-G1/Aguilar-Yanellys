@@ -88,7 +88,7 @@ const useForm = (initialState) => {
     };
 
     const goToSignUp = () => {
-        navigate('/signUp');
+        navigate('/sign-up');
     };
   
     return {

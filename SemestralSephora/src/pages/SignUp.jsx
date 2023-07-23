@@ -81,7 +81,7 @@ const useForm = (initialState) => {
     };
 
     const goToSignIn = () => {
-        navigate('/signIn');
+        navigate('/sign-in');
     };
   
     return {
@@ -109,7 +109,7 @@ const SignUp = () => {
                     <Input type="text" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Apellido"></Input>
                     <Input type="text" name="email" value={formData.email} onChange={handleChange} placeholder="Correo electrónico"></Input>
                     <Input type="text" name="password" value={formData.password} onChange={handleChange} placeholder="Contraseña"></Input>
-                    <Nolink onClick={goToSignIn}>¿Cliente existente? <NolinkBtn>Iniciar sesión</NolinkBtn></Nolink>
+                    <Nolink onClick={goToSignIn}>¿Cliente existente? <NolinkBtn>Inicia sesión</NolinkBtn></Nolink>
                     <Button>Registrarse</Button>
                 </Form>
             </Wrapper>
