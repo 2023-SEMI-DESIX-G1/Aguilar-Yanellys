@@ -63,13 +63,17 @@ const Icon = styled.div`
     }
 `;
 
-const Product = ({item}) => {
+const Product = ({item, onClick}) => {
+  const handleClick = () => {
+    onClick(item);
+  };
+  
   return (
     <Container>
       <Circle/>
       <Image src={item.img}/>
       <Info>
-        <Icon>
+        <Icon onClick={handleClick}>
           <ShoppingCartOutlined/>
         </Icon>
         <Icon>

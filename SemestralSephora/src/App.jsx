@@ -3,6 +3,8 @@ import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Cart from "./pages/Cart"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
+import Collection from "./pages/Collection"
+import Product from "./components/Product"
 
 const Layout = () => {
   return (
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "/sign-up",
         element: <SignUp />
+      },
+      {
+        path: "/collection",
+        element: <Collection />
+      },
+      {
+        path: "/product",
+        element: <Product />
       },
       {
         path: "/shopping-cart",

@@ -33,9 +33,13 @@ const Title = styled.h1`
     letter-spacing: 1px;
 `;
 
-const CategoryItem = ({item}) => {
+const CategoryItem = ({item, onClick}) => {
+  const handleClick = () => {
+    onClick(item);
+  };
+
   return (
-    <Container>
+    <Container onClick={handleClick}>
       <Image src={item.img}/>
       <Info>
         <Title>{item.title}</Title>
