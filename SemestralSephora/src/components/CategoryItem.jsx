@@ -1,9 +1,7 @@
 import styled from "styled-components"
 
 const Container = styled.div`
-    flex: 1;
     margin: 3px;
-    height: 70vh;
     position: relative;
     cursor: pointer;
 `;
@@ -28,7 +26,7 @@ const Info = styled.div`
 
 const Title = styled.h1`
     color: black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: white;
     letter-spacing: 1px;
 `;

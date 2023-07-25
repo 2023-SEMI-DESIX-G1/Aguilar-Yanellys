@@ -1,8 +1,11 @@
 import {Facebook,Instagram,MailOutline,Phone,Pinterest,Room,Twitter} from "@material-ui/icons";
 import styled from "styled-components";
+
   
   const Container = styled.div`
     display: flex;
+    background-color:  black;
+    color: white;
   `;
   
   const Left = styled.div`
@@ -12,10 +15,15 @@ import styled from "styled-components";
     padding: 20px;
   `;
   
-  const Logo = styled.h1``;
+  const Logo = styled.h1`
+    font-weight: bold;
+    letter-spacing: 3px;
+    cursor: pointer;
+  `;
   
   const Desc = styled.p`
     margin: 20px 0px;
+    text-align: justify;
   `;
   
   const SocialContainer = styled.div`
@@ -71,16 +79,25 @@ import styled from "styled-components";
   const Payment = styled.img`
       width: 50%;
   `;
-  
+
+
+
   const Footer = () => {
     return (
       <Container>
         <Left>
-          <Logo>LAMA.</Logo>
+          <Logo>SEPHORA</Logo>
           <Desc>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look even slightly believable.
+          A leader in prestige omni-retail, 
+          our mission at Sephora is to create a welcoming beauty shopping 
+          experience for all and inspire fearlessness in our community.
+          <br/>
+          <br/>
+          We operate over 2,700 stores in 35 countries worldwide, with an 
+          expanding base of over 500 stores across the Americas, and a world-class 
+          ecommerce site. Since opening our first US store in New York’s SoHo 
+          neighborhood in 1998, Sephora has been an industry-leading champion of diversity, 
+          inclusivity, and empowerment in the US, guided by our longstanding company values.
           </Desc>
           <SocialContainer>
             <SocialIcon color="3B5999">
@@ -102,12 +119,11 @@ import styled from "styled-components";
           <List>
             <ListItem>Home</ListItem>
             <ListItem>Cart</ListItem>
-            <ListItem>Man Fashion</ListItem>
-            <ListItem>Woman Fashion</ListItem>
-            <ListItem>Accessories</ListItem>
+            <ListItem>Products</ListItem>
+            <ListItem>Make-up</ListItem>
+            <ListItem>Skincare</ListItem>
+            <ListItem>Tools</ListItem>
             <ListItem>My Account</ListItem>
-            <ListItem>Order Tracking</ListItem>
-            <ListItem>Wishlist</ListItem>
             <ListItem>Wishlist</ListItem>
             <ListItem>Terms</ListItem>
           </List>
@@ -118,10 +134,10 @@ import styled from "styled-components";
             <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
           </ContactItem>
           <ContactItem>
-            <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+            <Phone style={{marginRight:"10px"}}/> +1-877-737-4672
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+            <MailOutline style={{marginRight:"10px"}} /> cssuport@sephora.com
           </ContactItem>
           <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>

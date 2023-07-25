@@ -36,7 +36,7 @@ const Collection = () => {
     <Container>
       <Navbar />
       <Announcement />
-      <Title>Dresses</Title>
+      <Title>Popular Products</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
