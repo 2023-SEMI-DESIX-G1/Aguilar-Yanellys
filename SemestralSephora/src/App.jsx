@@ -3,8 +3,8 @@ import SignIn from "./pages/SignIn"
 import SignUp from "./pages/SignUp"
 import Cart from "./pages/Cart"
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
-import Collection from "./pages/Collection"
-import Product from "./components/Product"
+import ProductList from "./pages/ProductList"
+import Product from "./pages/Product"
 
 const Layout = () => {
   return (
@@ -32,16 +32,16 @@ const router = createBrowserRouter([
         element: <SignUp />
       },
       {
-        path: "/collection",
-        element: <Collection />
-      },
-      {
         path: "/product",
         element: <Product />
       },
       {
         path: "/shopping-cart",
         element: <Cart />
+      },
+      {
+        path: "/product-list",
+        element: <ProductList />
       }
     ]
   },

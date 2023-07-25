@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
 import Products from "../components/Products";
 import Footer from "../components/Footer";
+import Newsletter from "../components/Newsletter";
 
 const Container = styled.div``;
 
@@ -29,9 +30,10 @@ const Select = styled.select`
   padding: 10px;
   margin-right: 20px;
 `;
+
 const Option = styled.option``;
 
-const Collection = () => {
+const ProductList = () => {
   return (
     <Container>
       <Navbar />
@@ -42,39 +44,37 @@ const Collection = () => {
           <FilterText>Filter Products:</FilterText>
           <Select>
             <Option disabled selected>
-              Color
+              Type
             </Option>
-            <Option>White</Option>
-            <Option>Black</Option>
-            <Option>Red</Option>
-            <Option>Blue</Option>
-            <Option>Yellow</Option>
-            <Option>Green</Option>
+            <Option>Lips</Option>
+            <Option>Face</Option>
+            <Option>Eyes</Option>
+            <Option>Foundation</Option>
           </Select>
           <Select>
             <Option disabled selected>
-              Size
+              Brand
             </Option>
-            <Option>XS</Option>
-            <Option>S</Option>
-            <Option>M</Option>
-            <Option>L</Option>
-            <Option>XL</Option>
+            <Option>Rare Beauty</Option>
+            <Option>Nars</Option>
+            <Option>Laura Mercier</Option>
+            <Option>The Ordinary</Option>
           </Select>
         </Filter>
         <Filter>
           <FilterText>Sort Products:</FilterText>
           <Select>
             <Option selected>Newest</Option>
-            <Option>Price (asc)</Option>
-            <Option>Price (desc)</Option>
+            <Option>Price: Low to High</Option>
+            <Option>Price: High to Low</Option>
           </Select>
         </Filter>
       </FilterContainer>
       <Products />
       <Footer />
+      <Newsletter/>
     </Container>
   );
 };
 
-export default Collection;
+export default ProductList;

@@ -40,6 +40,7 @@ import styled from "styled-components";
     align-items: center;
     justify-content: center;
     margin-right: 20px;
+    cursor: pointer;
   `;
   
   const Center = styled.div`
@@ -137,7 +138,7 @@ import styled from "styled-components";
             <Phone style={{marginRight:"10px"}}/> +1-877-737-4672
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{marginRight:"10px"}} /> cssuport@sephora.com
+            <MailOutline style={{marginRight:"10px"}} /> cssupport@sephora.com
           </ContactItem>
           <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>

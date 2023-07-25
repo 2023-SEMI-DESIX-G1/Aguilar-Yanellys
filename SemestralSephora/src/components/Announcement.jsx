@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     height: 30px;
-    background-color: #f5d5b8;
+    background-color: #fff4e9;
     color: black;
     display: flex;
     justify-content: center;
@@ -14,7 +14,7 @@ const Container = styled.div`
 const Announcement = () => {
     return (
         <Container>
-            ¡¡Envio gratis en todas las ordenes!! Usa el código FREESHIP
+            Opening Day Promo: ¡¡Free Shipping on all orders!! Use code FREESHIP
         </Container>
     )
 }
