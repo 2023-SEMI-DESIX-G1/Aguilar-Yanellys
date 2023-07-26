@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import {ShoppingCartOutlined, SearchOutlined, FavoriteBorder} from "@material-ui/icons"
-
+import { useNavigate } from 'react-router-dom';
 
 const Info = styled.div`
     opacity: 0%;
@@ -65,8 +65,14 @@ const Icon = styled.div`
 `;
 
 const Product = ({item, onClick}) => {
+  const navigate = useNavigate();
+
   const handleClick = () => {
     onClick(item);
+  };
+
+  const handleClickProduct = () => {
+    navigate('/product');
   };
   
   return (
@@ -77,12 +83,12 @@ const Product = ({item, onClick}) => {
         <Icon onClick={handleClick}>
           <ShoppingCartOutlined/>
         </Icon>
-        <Icon>
+        <Icon onClick={handleClickProduct}>
           <SearchOutlined/>
         </Icon>
-        <Icon>
+        {/* <Icon>
           <FavoriteBorder/>
-        </Icon>
+        </Icon> */}
       </Info>
     </Container>
   )
