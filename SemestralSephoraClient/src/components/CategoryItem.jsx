@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -35,19 +36,28 @@ const Title = styled.h1`
     letter-spacing: 1px;
 `;
 
-const CategoryItem = ({item, onClick}) => {
-  const handleClick = () => {
-    onClick(item);
-  };
+const Button = styled.button`
+    border:none;
+    padding: 5PX;
+    background-color: white;
+    color:gray;
+    cursor: pointer;
+    font-weight: 600;
+    color :black;
+`;
 
+const CategoryItem = ({ item }) => {
   return (
-    <Container onClick={handleClick}>
-      <Image src={item.img}/>
+    <Container>
+      <Link to={`/products/${item.cat}`}>
+      <Image src={item.img} />
       <Info>
         <Title>{item.title}</Title>
+        <Button>SHOP HERE</Button>
       </Info>
+      </Link>
     </Container>
-  )
-}
+  );
+};
 
-export default CategoryItem
+export default CategoryItem;

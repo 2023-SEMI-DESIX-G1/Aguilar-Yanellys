@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { SendRounded } from "@material-ui/icons";
-import React from "react";
 import { mobile } from "../responsive";
 
 const Container = styled.div`

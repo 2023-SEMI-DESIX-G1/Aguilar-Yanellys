@@ -2,9 +2,15 @@ import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
 import Navbar from "../components/Navbar";
+import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { publicRequest } from "../requestMethods";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
 
 const Container = styled.div``;
 
@@ -71,16 +77,6 @@ const FilterTitle = styled.span`
   margin-right: 20px;
 `;
 
-const FilterColor = styled.div`
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: ${(props) => props.color};
-  margin: 0px 5px;
-  display: flex;
-  cursor: pointer;
-`;
-
 const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
@@ -126,56 +122,74 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+  const location = useLocation();
+  const id = location.pathname.split("/")[2];
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("");
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/find/" + id);
+        setProduct(res.data);
+      } catch {}
+    };
+    getProduct();
+  }, [id]);
+
+  const handleQuantity = (type) => {
+    if (type === "dec") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleClick = () => {
+    dispatch(
+      addProduct({ ...product, quantity, size })
+    );
+  };
   return (
     <Container>
       <Navbar />
       <Announcement />
       <Wrapper>
         <ImgContainer>
-          <Image src="https://www.sephora.com/productimages/sku/s2518959-main-zoom.jpg?imwidth=612" />
+          <Image src={product.img} />
         </ImgContainer>
         <InfoContainer>
-          <Brand>Rare Beauty by Selena Gomez</Brand>
-          <Title>Soft Pinch Liquid Blush</Title>
-          <Desc>
-            A weightless, long-lasting liquid blush that blends and builds
-            beautifully for a soft, healthy flush. Available in matte and dewy
-            finishes.
-          </Desc>
-          <Price>$23.00</Price>
+          <Title>{product.title}</Title>
+          <Brand>{product.brand}</Brand>
+          <Desc>{product.desc}</Desc>
+          <Price>$ {product.price}</Price>
           <FilterContainer>
             <Filter>
-              <FilterTitle>Color</FilterTitle>
-              <FilterColor color="#c3574e" />
-              <FilterColor color="#de7971" />
-              <FilterColor color="#e09d94" />
-              <FilterColor color="#ca4e63" />
-              <FilterColor color="#c5606e" />
-              <FilterColor color="#bb001a" />
-              <FilterColor color="#813644" />
-            </Filter>
-            <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>Mini Size</FilterSizeOption>
-                <FilterSizeOption>Full Size</FilterSizeOption>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+                {product.size?.map((s) => (
+                  <FilterSizeOption key={s}>{s}</FilterSizeOption>
+                ))}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => handleQuantity("dec")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => handleQuantity("inc")} />
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleClick}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
-      <Footer />
       <Newsletter />
+      <Footer />
     </Container>
   );
 };
+
 
 export default Product;

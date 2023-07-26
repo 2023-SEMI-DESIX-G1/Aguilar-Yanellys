@@ -1,6 +1,10 @@
-import styled from "styled-components"
-import {ShoppingCartOutlined, SearchOutlined, FavoriteBorder} from "@material-ui/icons"
-import { useNavigate } from 'react-router-dom';
+import {
+  FavoriteBorderOutlined,
+  SearchOutlined,
+  ShoppingCartOutlined,
+} from "@material-ui/icons";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Info = styled.div`
     opacity: 0%;
@@ -64,34 +68,26 @@ const Icon = styled.div`
     }
 `;
 
-const Product = ({item, onClick}) => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    onClick(item);
-  };
-
-  const handleClickProduct = () => {
-    navigate('/product');
-  };
-  
+const Product = ({ item }) => {
   return (
     <Container>
-      <Circle/>
-      <Image src={item.img}/>
+      <Circle />
+      <Image src={item.img} />
       <Info>
-        <Icon onClick={handleClick}>
-          <ShoppingCartOutlined/>
+        <Icon>
+          <ShoppingCartOutlined />
         </Icon>
-        <Icon onClick={handleClickProduct}>
-          <SearchOutlined/>
+        <Icon>
+          <Link to={`/product/${item._id}`}>
+          <SearchOutlined />
+          </Link>
         </Icon>
-        {/* <Icon>
-          <FavoriteBorder/>
-        </Icon> */}
+        <Icon>
+          <FavoriteBorderOutlined />
+        </Icon>
       </Info>
     </Container>
-  )
-}
+  );
+};
 
 export default Product

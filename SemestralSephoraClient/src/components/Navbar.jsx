@@ -1,9 +1,10 @@
-import { Badge } from '@material-ui/core';
-import { Search, ShoppingCartOutlined, PersonOutlined } from '@material-ui/icons';
-import { useNavigate } from 'react-router-dom';
-import React from 'react';
-import styled from 'styled-components';
-import { mobile } from '../responsive';
+import { Badge } from "@material-ui/core";
+import { Search, ShoppingCartOutlined } from "@material-ui/icons";
+import React from "react";
+import styled from "styled-components";
+import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 
 //Styles for Navbar
@@ -77,49 +78,35 @@ const MenuItem = styled.div`
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
-function Navbar() {
-  const navigate = useNavigate();
-
-  const goToSignIn = () => {
-    navigate('/sign-in');
-  };
-
-  const goToShoppingCart = () => {
-    navigate('/shopping-cart');
-  };
-
-  const goToHome = () => {
-    navigate('/');
-  };
-
+const Navbar = () => {
+  const quantity = useSelector(state=>state.cart.quantity)
   return (
     <Container>
       <Wrapper>
         <Left>
-          {/* <Language>EN</Language> */}
+          <Language>EN</Language>
           <SearchContainer>
             <Input placeholder="Search" />
             <Search style={{ color: "gray", fontSize: 16 }} />
           </SearchContainer>
         </Left>
         <Center>
-          <Logo onClick={goToHome}>SEPHORA</Logo>
+          <Logo>SEPHORA</Logo>
         </Center>
         <Right>
-        <MenuItem>
-            <Badge onClick={goToSignIn}>
-              <PersonOutlined />
-            </Badge>
-          </MenuItem>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>LOG IN</MenuItem>
+          <Link to="/cart">
           <MenuItem>
-            <Badge badgeContent={4} onClick={goToShoppingCart} color="error">
+            <Badge badgeContent={quantity} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
+          </Link>
         </Right>
       </Wrapper>
     </Container>
   );
-}
+};
 
 export default Navbar;
