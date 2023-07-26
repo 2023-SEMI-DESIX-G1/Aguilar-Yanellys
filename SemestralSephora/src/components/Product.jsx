@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import {ShoppingCartOutlined, SearchOutlined, FavoriteBorder} from "@material-ui/icons"
 
+
 const Info = styled.div`
     opacity: 0%;
     width: 100%;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
     width: 100vw;
@@ -9,10 +10,9 @@ const Container = styled.div`
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ),
-      url("https://wallpaperset.com/w/full/c/9/c/156441.jpg")
+      url("https://cdn.wallpapersafari.com/29/69/NcUxoY.jpg")
         center;
     background-size: cover;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +23,7 @@ const Wrapper = styled.div`
     width: 25%;
     padding: 20px;
     background: #ffff;
+    ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`

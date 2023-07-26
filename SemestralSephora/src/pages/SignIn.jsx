@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
     width: 100vw;
@@ -9,13 +10,13 @@ const Container = styled.div`
         rgba(255, 255, 255, 0.5),
         rgba(255, 255, 255, 0.5)
       ),
-      url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700980434.jpg")
+      url("https://cdn.wallpapersafari.com/29/69/NcUxoY.jpg")
         center;
     background-size: cover;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    
 `;
 
 const Wrapper = styled.div`
@@ -23,11 +24,12 @@ const Wrapper = styled.div`
     padding: 30px 20px;
     background: #ffff;
     border-radius: 5px
+    ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
     font-size: 24px;
-    font-weigth: 300;
+    font-weight: 300;
     margin: 10px 0;
 `;
 
@@ -109,13 +111,13 @@ const SignIn = () => {
     return (
         <Container>
             <Wrapper>
-                <Title>Inicio de sesión</Title>
+                <Title>Log in to your Account</Title>
                 <Form onSubmit={handleSubmit}>
-                    <Input type="text" name="email" value={formData.email} onChange={handleChange} placeholder="Correo electrónico"></Input>
-                    <Input type="text" name="password" value={formData.password} onChange={handleChange} placeholder="Contraseña"></Input>
-                    <Link>¿Olvidaste tu contraseña?</Link>
-                    <Nolink onClick={goToSignUp}>No tienes cuenta? <NolinkBtn>Regístrate</NolinkBtn></Nolink>
-                    <Button type="submit">Iniciar</Button>
+                    <Input type="text" name="email" value={formData.email} onChange={handleChange} placeholder="Email"></Input>
+                    <Input type="text" name="password" value={formData.password} onChange={handleChange} placeholder="Password"></Input>
+                    <Link>¿Forgot your Password?</Link>
+                    <Nolink onClick={goToSignUp}>Don't have an Account? <NolinkBtn>Sign In</NolinkBtn></Nolink>
+                    <Button type="submit">Log In</Button>
                 </Form>
             </Wrapper>
         </Container>
